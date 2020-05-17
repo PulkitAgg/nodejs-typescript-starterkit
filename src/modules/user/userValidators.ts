@@ -1,6 +1,7 @@
 import { isEmpty, toLower, } from 'lodash';
 import { validationMessage, isValidEmail } from '../../utility';
-import customException from '../../customException'
+import customException from '../../customException';
+
 /**
  * check validation for signup.
  */

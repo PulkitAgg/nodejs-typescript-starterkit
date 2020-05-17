@@ -21,7 +21,6 @@ export default {
         EMPTY_PASSWORD: 'Please enter password.',
         TOKEN_GENERATE_EXCEPTION: "Error while generating access token.",
         DUPLICATE_CREDENTIAL: 'Account with this information already exist.',
-        ACCOUNT_NOT_EXIST: 'Email/phone number not exist.',
         INCORRECT_PASSWORD: 'Incorrect password.',
     }
 }

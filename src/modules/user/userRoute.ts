@@ -21,4 +21,20 @@ userRouter.route("/signup")
             sendError(res, err);
         })
     });
+
+/**
+ * route for user login
+ */
+userRouter.route('/login')
+    .post([validateLogin], function (req: any, res: any) {
+        const { email, password } = req.body;
+        userFacade.login({
+            email, password
+        }).then(function (result: any) {
+            sendSuccess(res, result);
+        }).catch(function (err: any) {
+            sendError(res, err);
+        })
+    })
+
 export default userRouter;

@@ -17,35 +17,24 @@ export default {
             }
             throw err;
         })
+    },
+
+    /**
+     * function for checking user credentials
+     * @param {*} params email, password, phoneNumber
+     */
+    login: function (params: { email: string; password: string }): any {
+        return userService.isEmailExist(params.email).then(async (result: any) => {
+            if (result) {
+                const isMatch = await comparePasswrod(params.password, result.password);
+                if (isMatch) {
+                    return userMapper.loginMapping(result)
+                } else {
+                    throw customException.passwordIncorrect();
+                }
+            } else {
+                throw customException.accountNotExist();
+            }
+        })
     }
 }
-
-
-// /**
-//  * function for checking user credentials
-//  * @param {*} params email, password, phoneNumber
-//  */
-// function login(params) {
-//     let prmoise = [];
-//     if (params.email) {
-//         prmoise.push(userService.isEmailExist(params.email));
-//     } else if (params.phoneNumber) {
-//         prmoise.push(userService.isPhoneExist(params.phoneNumber));
-//     }
-//     return Promise.all(prmoise).then(async result => {
-//         if (result && result.length && result[0]) {
-//             const isMatch = await appUtlis.comparePasswrod(params.password, result[0].password);
-//             if (isMatch) {
-//                 return userMapper.loginMapping(result[0])
-//             } else {
-//                 throw customException.passwordIncorrect();
-//             }
-//         } else {
-//             if (params.phoneNumber) {
-//                 throw customException.mobileNotExist();
-//             } else {
-//                 throw customException.accountNotExist();
-//             }
-//         }
-//     })
-// }

@@ -32,26 +32,18 @@ export default {
     invalidToken: function (err: any): Exception {
         return new Exception(1006, constants.MESSAGES.INVALID_TOKEN, err);
     },
-
-
-
-
-    userNotFound: function (err: any): Exception {
-        return new Exception(1003, constants.MESSAGES.USER_NOT_FOUND, err);
+    passwordIncorrect: function (): Exception {
+        return new Exception(1017, constants.MESSAGES.INCORRECT_PASSWORD)
     },
+    accountNotExist: function (): Exception {
+        return new Exception(1018, constants.MESSAGES.USER_NOT_FOUND)
+    },
+
+
     unauthorizeAccess: function (err: any): Exception {
-        return new Exception(1004, constants.MESSAGES.UNAUTHORIZED_ACCESS_EXCEPTION, err)
+        return new Exception(1019, constants.MESSAGES.UNAUTHORIZED_ACCESS_EXCEPTION, err)
     },
     tokenGenException: function (err: any): Exception {
-        return new Exception(1005, constants.MESSAGES.TOKEN_GENERATE_EXCEPTION, err)
+        return new Exception(1020, constants.MESSAGES.TOKEN_GENERATE_EXCEPTION, err)
     },
-
-
-
-    accountNotExist: function (err: any): Exception {
-        return new Exception(1012, constants.MESSAGES.ACCOUNT_NOT_EXIST, err)
-    },
-    passwordIncorrect: function (err: any): Exception {
-        return new Exception(1013, constants.MESSAGES.INCORRECT_PASSWORD, err)
-    }
 };
