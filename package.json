@@ -13,12 +13,19 @@
   "author": "Pulkit",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/lodash": "^4.14.151",
+    "bcrypt": "^4.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
     "mongoose": "^5.9.14"
   },
   "devDependencies": {
     "@types/express": "^4.17.6",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.7.20",
     "@types/node": "^14.0.1",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
