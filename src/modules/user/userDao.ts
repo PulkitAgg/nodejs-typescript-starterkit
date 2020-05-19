@@ -13,7 +13,7 @@ export default {
      * function for checking the email exist or not.
      * @param {*} email 
      */
-    isEmailExist: function (email: string) {
+    isEmailExist: function (email: string): any {
         return User.findOne({ email });
     }
 }

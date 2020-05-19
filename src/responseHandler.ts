@@ -1,5 +1,6 @@
 import constant from './constant';
 import customException from './customException';
+import logger from './logger';
 
 class APIResponse {
     customStatus: number
@@ -27,10 +28,12 @@ export function sendError(response: any, error: any): any {
         error = customException.intrnlSrvrErr(error);
     }
     const result = new APIResponse(constant.STATUS_CODE.ERROR, error);
+    logger.error(error);
     sendResponse(response, result);
 }
 
 export function sendSuccess(response: any, result: any): any {
     const resultResponse = new APIResponse(constant.STATUS_CODE.SUCCESS, result);
+    logger.info(resultResponse);
     sendResponse(response, resultResponse);
 }

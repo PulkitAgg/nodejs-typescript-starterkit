@@ -6,7 +6,6 @@ import { cfg, dbConfig, expressConfig } from './config';
 
 import routes from './route';
 
-// const app = express();
 const DEFAULT_PORT = 5000;
 
 
