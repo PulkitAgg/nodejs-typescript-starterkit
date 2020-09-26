@@ -1,6 +1,6 @@
 # Node.js Project Setup in Typescript
 
-This project gives you and idea about how we can write node.js application using typescript and how we can use MongoDB in it. I also implemented logger for logging our apps log.
+This project gives you an idea about how we can write node.js application using typescript and how we can use MongoDB in it. I also implemented logger for logging our apps log.
 
 ---
 ## Requirements
